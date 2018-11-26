@@ -13,6 +13,7 @@ body {
     line-height: 22px;
     color: #777777;
     background-color:#F7F6F2;
+    margin: 0;
 }
 
 .title {
@@ -34,11 +35,12 @@ h2 {
 
 .content-wrapper {
     background-color:whitesmoke; /* Fallback color */
-    background-color:whitesmoke;
     background-color: rgba(255, 255, 255, 0.7); /* Black w/opacity/see-through */
 
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 90%;
+    margin: auto;
+    /* margin: 50px auto; */
+    
     text-align: center;
 
     border-top-left-radius: 15px;
@@ -78,8 +80,9 @@ form {
 
 
 img {
+    width: 100%;
+    max-width: 280px;
     max-height: 400px;
-    width: 280px;
     padding:2px;
     margin: 5px;
     border:1px solid #0F224E;
@@ -97,17 +100,49 @@ input[type=text] {
     box-sizing: border-box;
     border: 1px solid #B80F71;
 }
+
 .topics-block,
-.gif-container {
+{
     float: left;
     color: #0F224E;
     font-weight: bold;
-    width: 33%;
-    height: 100%
 }
+#gifs-appear-here
+ {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 
 .clearfix::after {
     content: "";
     display: block;
     clear: both;
+}
+
+
+@media screen and (max-width: 500px) {
+    button, #add-topic {
+        width: 80%;
+    }
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .content-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    } 
+}
+@media screen and (min-width: 2001px) {
+    /* .content-wrapper {
+        max-width: 80%;
+        margin: auto;
+    } */
 }
