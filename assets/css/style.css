@@ -140,9 +140,4 @@ input[type=text] {
         margin: 0;
     } 
 }
-@media screen and (min-width: 2001px) {
-    /* .content-wrapper {
-        max-width: 80%;
-        margin: auto;
-    } */
-}
+
