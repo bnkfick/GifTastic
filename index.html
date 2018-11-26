@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-  <meta charset="utf-8">
-  <title>Favorite Giffy Topics</title>
-  <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
-    .topics-block {
-      float: left;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favorite Giffy Topics</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
+    <div class="title">
+        <h1>GifTastic</h1>
+    </div>
 
-  <div class="container">
-    <h1>Topics Search</h1>
+    <div class="content-wrapper clearfix">
 
-    <!-- Rendered buttons will get dumped here  -->
-    <div id="buttons-view"></div>
+        <!-- Rendered buttons will get dumped here  -->
+        <div id="buttons-view"></div>
 
-    <form id="topic-form">
-      <label for="topic-input">Add a Topic, Yo!</label>
-      <input type="text" id="topic-input"><br>
+        <h2>Topics Search</h2>
 
-      <!-- Button triggers new topic to be added -->
-      <input id="add-topic" type="submit" value="Add a Topic, Yo!">
-    </form>
 
-    <!-- Images will get dumped Here -->
-    <div id="gifs-appear-here"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <form id="topic-form">
+            <label for="topic-input">Add a Topic, Yo!</label>
+            <input type="text" id="topic-input">
 
-  </div>
+            <!-- Button triggers new topic to be added -->
+            <input id="add-topic" type="submit" value="Add a Topic, Yo!">
+        </form>
+
+        <!-- Images will get dumped Here -->
+        <div id="gifs-appear-here" class="clearfix"></div>
+
+        
+
+    </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/giftastic.js"></script>
+
 </html>

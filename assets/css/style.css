@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    background-image: url("../../assets/images/hand-on-keyboard.jpg"); 
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    color: #777777;
+    background-color:#F7F6F2;
+}
+
+.title {
+    border-bottom: 1px solid #0F224E;
+}
+
+h1 { 
+    font-size: 48px;
+    text-shadow: 1px 1px 2px black;
+    color:  #0F224E;
+}
+h2 { 
+    font-weight:bold;
+    font-size: 42px;
+    text-shadow: 1px 1px 2px black;
+    text-align:center;
+    color:  #0F224E;
+}
+
+.content-wrapper {
+    background-color:whitesmoke; /* Fallback color */
+    background-color:whitesmoke;
+    background-color: rgba(255, 255, 255, 0.7); /* Black w/opacity/see-through */
+
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1px solid darkslategray;
+}
+
+
+button, #add-topic {
+    background-color: #0F224E;
+    color:#F7F6F2;
+    border:1px solid black;
+    text-shadow: 1px 1px 12px black;
+    width: 200px;
+    padding: 20px;
+    margin: 25px 5px 0 5px;
+    font-size: 16px;
+}
+
+form {
+
+    border:1px solid green;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+#add-topic 
+{
+    /* #753B2D */
+    /* background-color: #91523F; */
+    /*background-color: #E742B2;*/
+    background-color: #B80F71; 
+    margin: 10px;
+}
+
+
+img {
+    max-height: 400px;
+    width: 280px;
+    padding:2px;
+    margin: 5px;
+    border:1px solid #0F224E;
+    background-color:lightgray;
+}
+
+form,
+input[type="submit"] {
+    margin: 10px;
+}
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #B80F71;
+}
+.topics-block,
+.gif-container {
+    float: left;
+    color: #0F224E;
+    font-weight: bold;
+    width: 33%;
+    height: 100%
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
