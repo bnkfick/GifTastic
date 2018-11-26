@@ -3,11 +3,10 @@
 //====================================================================================/
 // Initial array of topics - Choose a Theme
 //====================================================================================/
-var topics = ["Babies", "Puppies", "Kittens", "Unicorns", "Mermaids", "Princesses", "Goddesses"];
-var topics = ["Oprah Winfrey", "Hilary Clinton", "Sheryl Sandberg"];
-var topics = ["Babies", "Puppies", "Kittens", "Unicorns", "Mermaids", "Princesses", "Goddesses"];
+// var topics = ["Babies", "Puppies", "Kittens", "Unicorns", "Mermaids", "Princesses", "Goddesses"];
+// var topics = ["Oprah Winfrey", "Hilary Clinton", "Sheryl Sandberg"];
 var topics = ["Austin Powers", "Dr. Evil", "Mini Me"];
-
+var limit=10;
 //====================================================================================/
 // Function for displaying Topic Buttons
 // 
@@ -63,9 +62,10 @@ function displayTopicInfo() {
 
     var topic = $(this).attr("data-name");
     var encodedTopic = encodeURIComponent(topic);
+
     // Constructing a URL to search Giphy for the name of the person who said the quote
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        encodedTopic + "&api_key=dc6zaTOxFJmzC&limit=10";
+        encodedTopic + "&api_key=dc6zaTOxFJmzC&limit=" + limit;
 
     console.log("queryURL", queryURL);
     // Performing our AJAX GET request
