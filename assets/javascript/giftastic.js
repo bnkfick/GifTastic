@@ -3,9 +3,8 @@
 //====================================================================================/
 // Initial array of topics - Choose a Theme
 //====================================================================================/
-// var topics = ["Babies", "Puppies", "Kittens", "Unicorns", "Mermaids", "Princesses", "Goddesses"];
-// var topics = ["Oprah Winfrey", "Hilary Clinton", "Sheryl Sandberg"];
-var topics = ["Austin Powers", "Dr. Evil", "Mini Me"];
+var topics = ["Reindeer", "Olaf", "Santa", "Minions", "Grinch", "Snowflakes"];
+
 var limit=10;
 //====================================================================================/
 // Function for displaying Topic Buttons
