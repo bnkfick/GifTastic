@@ -5,7 +5,7 @@
 //====================================================================================/
 var topics = ["Olaf", "Frosty", "Snowmen", "Snow", "Igloo", "Snowball"];
 
-var limit=10;
+var limit = 10;
 //====================================================================================/
 // Function for displaying Topic Buttons
 // 
@@ -34,14 +34,14 @@ function renderButtons() {
 
 // This function handles events where the add topic button is clicked
 $("#add-topic").on("click", function (event) {
-    console.log("add topic click");
+    //console.log("add topic click");
     event.preventDefault();
 
     var topic = $("#topic-input").val().trim();
-    if (!topic) { 
-        return; 
+    if (!topic) {
+        return;
     }
-    else { 
+    else {
         topics.push(topic);
         $("#topic-input").empty();
         renderButtons();
@@ -51,17 +51,17 @@ $("#add-topic").on("click", function (event) {
 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
-
+$("#add-ten").hide();
 
 //====================================================================================/
 // Add Event Listener for adding Topics
 //====================================================================================/
 // Event listener for all button elements
-function displayTopicInfo() {
+function displayTopicInfo(qty) {
 
     var topic = $(this).attr("data-name");
     var encodedTopic = encodeURIComponent(topic);
-
+    
     // Constructing a URL to search Giphy for the name of the person who said the quote
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         encodedTopic + "&api_key=dc6zaTOxFJmzC&limit=" + limit;
@@ -82,36 +82,37 @@ function displayTopicInfo() {
 
                 // Only taking action if the photo has an appropriate rating
                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                // Creating a div for the gif
-                var gifDiv = $("<div>").addClass("gif-container");
+                    // Creating a div for the gif
+                    var gifDiv = $("<div>").addClass("gif-container");
 
 
-                // Storing the result item's rating
-                var rating = results[i].rating;
+                    // Storing the result item's rating
+                    var rating = results[i].rating;
 
-                // Creating a paragraph tag with the result item's rating
-                var txtDiv = $("<div>").text("Rating: " + rating.toUpperCase());
-                
-                // Creating an image tag
-                var topicImage = $("<img>");
+                    // Creating a paragraph tag with the result item's rating
+                    var txtDiv = $("<div>").text("Rating: " + rating.toUpperCase());
 
-                // Giving the image tag an src attribute of a proprty pulled off the
-                // result item
-                topicImage.attr("src", results[i].images.fixed_height_still.url);
-                topicImage.attr("data-still", results[i].images.fixed_height_still.url);
-                topicImage.attr("data-animate", results[i].images.fixed_height.url);
-                topicImage.attr("data-state", "still");
-                topicImage.addClass("gif"); 
+                    // Creating an image tag
+                    var topicImage = $("<img>");
 
-  
-                // Appending the paragraph and personImage we created to the "gifDiv" div we created
-                gifDiv.append(txtDiv);
-                gifDiv.append(topicImage);
+                    // Giving the image tag an src attribute of a proprty pulled off the
+                    // result item
+                    topicImage.attr("src", results[i].images.fixed_height_still.url);
+                    topicImage.attr("data-still", results[i].images.fixed_height_still.url);
+                    topicImage.attr("data-animate", results[i].images.fixed_height.url);
+                    topicImage.attr("data-state", "still");
+                    topicImage.addClass("gif");
 
-                // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                $("#gifs-appear-here").prepend(gifDiv);
+
+                    // Appending the paragraph and personImage we created to the "gifDiv" div we created
+                    gifDiv.append(txtDiv);
+                    gifDiv.append(topicImage);
+
+                    // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+                    $("#gifs-appear-here").prepend(gifDiv);
                 }
             }
+            $("#add-ten").show();
         });
 }
 
@@ -120,7 +121,7 @@ function displayTopicInfo() {
 
 // Adding click event listeners to all elements with a class of "topic"
 $("#buttons-view").on("click", ".topic", displayTopicInfo);
-
+$("#add-ten").on("click", displayTopicInfo);
 //====================================================================================/
 // Toggle image between animate and still
 //====================================================================================/
